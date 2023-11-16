@@ -34,10 +34,53 @@ button {
   cursor: pointer;
 }
 
+.title {
+  font-family: "Yeseva One", serif;
+  font-size: 40px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.section {
+  padding-bottom: 150px;
+}
+
+.button {
+  padding: 18px 54px;
+  background: #ffbd59;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .container {
   max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.section--decor {
+  position: relative;
+}
+
+.section--decor::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: url(../images/section-decor.png);
+  width: 22px;
+  height: 30px;
+}
+
+.section--decor::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: 10px;
+  background-color: #7b6152;
+  height: 1px;
+  width: 1000%;
 }
 
 .menu__btn {
@@ -136,6 +179,7 @@ header {
   background-color: #a5978e;
   padding: 50px 0;
   color: #fafafa;
+  margin-bottom: 150px;
 }
 
 .about__inner {
@@ -145,13 +189,6 @@ header {
 
 .about__content {
   min-width: 370px;
-}
-
-.about__title {
-  font-family: "Yeseva One", serif;
-  font-size: 40px;
-  margin-bottom: 15px;
-  font-weight: 400;
 }
 
 .about__text {
@@ -166,27 +203,6 @@ header {
   padding-left: 110px;
   padding-bottom: 48px;
   flex-basis: 930px;
-  position: relative;
-}
-
-.about__list::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-image: url(../images/about-decor.png);
-  width: 22px;
-  height: 30px;
-}
-
-.about__list::after {
-  content: "";
-  position: absolute;
-  left: 22px;
-  bottom: 10px;
-  background-color: #7b6152;
-  height: 1px;
-  width: 1000%;
 }
 
 .about__item-img {
@@ -197,6 +213,50 @@ header {
   font-size: 11px;
 }
 
+.section__inner {
+  display: grid;
+  grid-template-columns: 370px auto;
+}
+
+.section__content-descr {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: center;
+  padding-bottom: 90px;
+}
+
+.products__content {
+  gap: 50px 0px;
+}
+
+.products__item {
+  max-width: 290px;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
+
+.products__item-img {
+  margin-bottom: 8px;
+}
+.products__item-price {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+}
+.products__item-title {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+}
+.products__item-text {
+  margin-bottom: 27px;
+  font-size: 12px;
+}
+
+/* --------------------------- */
 .footer {
   padding: 40px 0 35px;
 }
@@ -247,6 +307,15 @@ header {
   .about__list {
     padding-left: 20px;
   }
+
+  .section__inner {
+    grid-template-columns: 290px auto;
+    gap: 0 10px;
+  }
+
+  .section__text {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -262,6 +331,10 @@ header {
 
   .footer__social {
     justify-content: center;
+  }
+
+  .section__inner {
+    grid-template-columns: 190px auto;
   }
 }
 
@@ -341,6 +414,33 @@ header {
   .about__item-img--2 {
     width: 190px;
   }
+
+  .products__item {
+    width: 175px;
+  }
+
+  .products__item-img {
+    width: 175px;
+    margin-bottom: 6px;
+  }
+
+  .products__item-price {
+    margin-bottom: 7px;
+    font-size: 12px;
+  }
+  .products__item-title {
+    margin-bottom: 9px;
+    font-size: 12px;
+  }
+  .products__item-text {
+    margin-bottom: 18px;
+    font-size: 8px;
+  }
+
+  .button {
+    font-size: 12px;
+    padding: 12px 27px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -373,6 +473,15 @@ header {
 
   .heaer__menu {
     order: 1;
+  }
+
+  .section__inner {
+    display: block;
+  }
+
+  .section__descr {
+    text-align: center;
+    margin-bottom: 30px;
   }
 }
 
@@ -455,6 +564,23 @@ header {
     align-items: flex-end;
     gap: 5px;
   }
+
+  .about {
+    margin-bottom: 50px;
+  }
+
+  .section {
+    padding-bottom: 50px;
+  }
+
+  .section__content-descr {
+    padding-bottom: 60px;
+  }
+
+  .section__descr {
+    margin: 0 auto 30px;
+    width: 300px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -515,7 +641,38 @@ header {
     margin-bottom: 0;
   }
 
-  .about__item-img--2{
+  .about__item-img--2 {
     display: none;
+  }
+
+  .products__item {
+    width: 150px;
+  }
+
+  .products__item-img {
+    width: 150px;
+  }
+
+  .section__descr {
+    margin: 0 auto 25px;
+    width: 235px;
+  }
+
+  .button {
+    font-size: 8px;
+    padding: 10px 22px;
+  }
+
+  .products__item-price {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .products__item-title {
+    font-size: 10px;
+  }
+
+  .products__item-text {
+    margin-bottom: 16px;
   }
 }
