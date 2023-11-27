@@ -453,6 +453,141 @@ header {
   /* text-align: left; */
 }
 
+.accordeon {
+}
+
+.accordeon__item {
+  background-color: #fafafa;
+  margin-bottom: 10px;
+}
+
+.accordeon__title {
+  font-size: 16px;
+  font-family: "Yeseva One", serif;
+  display: block;
+  background-color: transparent;
+  padding: 16px 50px 16px 13px;
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+.accordeon__title::after {
+  content: "";
+  background-image: url(../images/arrow.svg);
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 26px;
+  top: 17px;
+  transition: .3s;
+}
+
+.accordeon__title.accordeon__title--active::after{
+  transform: rotate(180deg);
+  transition: .3s;
+}
+
+.accordeon__text {
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s, max-height 0.3s;
+}
+
+.accordeon__text ol {
+  padding: 20px 40px;
+}
+
+.accordeon__text.accordeon__text--visible {
+  opacity: 1;
+}
+
+.promo {
+  background-image: url(../images/promo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 140px 0;
+}
+
+.promo__inner {
+  display: flex;
+  align-items: flex-end;
+}
+
+.promo__text {
+  font-size: 40px;
+  font-family: "Yeseva One", serif;
+  color: #fff;
+  padding-left: 56px;
+  max-width: 765px;
+  margin-right: 110px;
+}
+
+.promo__link {
+  background-color: #ffbd59;
+  color: #272727;
+  font-family: Comfortaa;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  padding: 15px 45px;
+  margin-top: 36px;
+  white-space: nowrap;
+}
+
+.contacts {
+  padding: 150px 0 50px;
+}
+
+.contacts__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form {
+  background-color: #fff;
+  width: 664px;
+  padding: 70px 42px;
+}
+
+.form__title {
+  font-family: "Yeseva One", serif;
+  margin-bottom: 60px;
+  font-size: 40px;
+}
+
+.form__input {
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+  padding: 7px 10px;
+  color: #000;
+}
+
+.form__input::placeholder {
+  color: #b3b3b3;
+  font-family: Comfortaa;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.form__btn {
+  background-color: #ffbd59;
+  color: #272727;
+  font-family: Comfortaa;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  padding: 15px 45px;
+  margin-top: 36px;
+}
+
 /* --------------------------- */
 .footer {
   padding: 40px 0 35px;
@@ -486,6 +621,10 @@ header {
 
   .feedback__slider {
     width: 660px;
+  }
+
+  .promo__text {
+    font-size: 28px;
   }
 }
 
@@ -557,6 +696,30 @@ header {
 
   .certificates__slider {
     width: 700px;
+  }
+
+  .feedback__item-video {
+    width: 200px;
+  }
+
+  .feedback__item-img {
+    width: 200px;
+  }
+
+  .feedback__item-btn {
+    position: inherit;
+  }
+
+  .feedback__slider {
+    width: 480px;
+  }
+
+  .contacts__img {
+    width: 300px;
+  }
+
+  .form__title {
+    font-size: 30px;
   }
 }
 
@@ -760,6 +923,26 @@ header {
     bottom: -15px;
     right: 10px;
   }
+
+  .feedback__slider {
+    width: 420px;
+  }
+
+  .certificates__content img {
+    width: 200px;
+  }
+
+  .certificates__slider {
+    width: 500px;
+  }
+
+  .contacts__img {
+    width: 200px;
+  }
+
+  .form__title {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -806,6 +989,27 @@ header {
   .team__item-box {
     bottom: -15px;
     right: 100px;
+  }
+
+  .section__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo {
+    padding: 60px 0;
+  }
+
+  .promo__text {
+    font-size: 22px;
+    margin-right: 10px;
+  }
+
+  .promo__link {
+    font-size: 10px;
+    padding: 10px 30px;
+    margin-right: 56px;
   }
 }
 
@@ -917,6 +1121,41 @@ header {
 
   .team {
     margin-bottom: 50px;
+  }
+
+  .feedback__item-video {
+    width: 160px;
+  }
+
+  .feedback__item-img {
+    width: 160px;
+  }
+
+  .feedback__slider {
+    width: 350px;
+  }
+
+  .promo {
+    padding: 50px 0;
+  }
+
+  .promo__text {
+    font-size: 18px;
+    padding-left: 0;
+  }
+
+  .promo__link {
+    font-size: 10px;
+    padding: 8px 20px;
+    margin-right: 0px;
+  }
+
+  .contacts__img {
+    display: none;
+  }
+
+  .form {
+    text-align: -webkit-center;
   }
 }
 
